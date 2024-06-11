@@ -1,18 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
-
 function DarkModeButton() {
-  const [theme, setTheme] = useState(localStorage.theme)
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark")
-      localStorage.theme = "dark"
-    } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.theme = "light"
-    }
-  }, [])
   return (
     <div className="fixed bottom-10 right-10 dark:bg-white bg-slate-900 flex flex-row p-3 rounded-full">
       <label className="inline-flex items-center cursor-pointer">
@@ -20,15 +8,10 @@ function DarkModeButton() {
           onChange={(e) => {
             if (e.target.checked) {
               document.documentElement.classList.add("dark")
-              setTheme("dark")
-              localStorage.theme = "dark"
             } else {
               document.documentElement.classList.remove("dark")
-              setTheme("light")
-              localStorage.theme = "light"
             }
           }}
-          defaultChecked={theme === "dark"}
           type="checkbox"
           id="dark"
           className="sr-only peer"
