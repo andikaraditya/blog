@@ -1,10 +1,12 @@
 import Link from "next/link"
 import getPostMetadata from "./components/getPostMetadata"
+import DarkModeButton from "./components/DarkModeButton"
 
 export default function Home() {
   const titles = getPostMetadata()
   return (
-    <main className="bg-gray-100 dark:bg-[#1F1F1F] min-h-[100vh]">
+    <main className="relative bg-gray-100 dark:bg-[#1F1F1F] min-h-[100vh]">
+      <DarkModeButton />
       <div className="max-md:w-[85%] flex flex-col gap-3 w-[700px] mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 my-11 text-center dark:text-gray-300">
           Lightstation Blog
