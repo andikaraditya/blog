@@ -4,6 +4,7 @@ import type { Metadata, ResolvingMetadata } from "next"
 import matter from "gray-matter"
 import Markdown from "markdown-to-jsx"
 import Link from "next/link"
+import DarkModeButton from "@/app/components/DarkModeButton"
 
 function getPostContent(slug: string) {
   const folder = "posts/"
@@ -48,7 +49,8 @@ function BlogPage(props: any) {
   const slug = props.params.slug
   const post = getPostContent(slug)
   return (
-    <main className="bg-gray-100 dark:bg-[#1F1F1F] min-h-[100vh]">
+    <main className="relative bg-gray-100 dark:bg-[#1F1F1F] min-h-[100vh]">
+      <DarkModeButton />
       <div className="w-[85%] xl:w-[60%] mx-auto pt-10">
         <Link className="text-2xl underline dark:text-gray-300" href={"/"}>
           Home
