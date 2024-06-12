@@ -6,8 +6,7 @@ export default function Home() {
   const titles = getPostMetadata()
   return (
     <main className="relative bg-gray-100 dark:bg-[#1F1F1F] min-h-[100vh]">
-      <DarkModeButton />
-      <div className="max-md:w-[85%] flex flex-col gap-3 w-[700px] mx-auto">
+      <div className="w-[85%] flex flex-col gap-3 md:w-[700px] mx-auto pt-10">
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 my-11 text-center dark:text-gray-300">
           Lightstation Blog
         </h1>
